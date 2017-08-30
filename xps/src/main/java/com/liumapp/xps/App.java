@@ -1,4 +1,4 @@
-package com.liumapp;
+package com.liumapp.xps;
 
 /**
  * Hello world!
