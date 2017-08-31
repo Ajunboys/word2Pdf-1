@@ -6,7 +6,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>xps</artifactId>
+    <artifactId>api</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -18,7 +18,6 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
@@ -29,7 +28,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>./lib/</classpathPrefix>
-                            <mainClass>com.liumapp.xps.App</mainClass>
+                            <mainClass>com.liumapp.api.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

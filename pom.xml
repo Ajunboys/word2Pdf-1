@@ -15,6 +15,7 @@
 	<modules>
 		<module>xps</module>
 		<module>openoffice</module>
+		<module>api</module>
 	</modules>
 
 	<properties>
