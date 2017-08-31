@@ -5,8 +5,9 @@
         <artifactId>word2pdf</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <artifactId>xps</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
