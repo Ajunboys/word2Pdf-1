@@ -16,12 +16,6 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.artofsolving.jodconverter/jodconverter-core -->
-		<dependency>
-			<groupId>org.artofsolving.jodconverter</groupId>
-			<artifactId>jodconverter-core</artifactId>
-			<version>3.0-beta-4</version>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.artofsolving/jodconverter-maven-plugin -->
 		<dependency>
