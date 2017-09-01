@@ -35,7 +35,11 @@
 				<artifactId>jodconverter-core</artifactId>
 				<version>3.0-beta-4</version>
 				<scope>system</scope>
+<<<<<<< HEAD
 				 <systemPath>${basedir}/../lib/jodconverter-core-3.0-beta-4.jar</systemPath> 
+=======
+				 <systemPath>${basedir}/../lib/jodconverter-core-3.0-beta-4.jar</systemPath>
+>>>>>>> 5671b2f2053cee041cf7579a28689535e2904edc
 			</dependency>
 		
 
