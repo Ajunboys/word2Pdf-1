@@ -7,7 +7,7 @@ import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
 
-public class xps2pdf {
+public class Xps2pdf {
 	static final int wdFormatPDF = 17;// PDF 格式    
 	static final int ppSaveAsPDF = 32;// ppt 转PDF 格式 
    
