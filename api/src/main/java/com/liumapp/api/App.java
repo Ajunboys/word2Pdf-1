@@ -1,7 +1,6 @@
 package com.liumapp.api;
 
 import com.liumapp.api.config.Configure;
-import com.liumapp.api.connector.UDPSocketMonitor;
 import com.liumapp.api.utils.SpringLocator;
 import org.apache.commons.cli.*;
 import org.apache.log4j.Logger;
@@ -9,7 +8,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.net.UnknownHostException;
 
 /**
  * Created by liumapp on 8/31/17.
@@ -23,8 +21,6 @@ public class App {
 
     private static Logger logger = Logger.getLogger(App.class);
 
-    private UDPSocketMonitor udpSocketMonitor;
-
     public static void main(String[] args) {
 
         try {
@@ -34,13 +30,12 @@ public class App {
         }
 
         SpringLocator.applicationContext = new ClassPathXmlApplicationContext("classpath*:/spring/applicationContext*.xml");
+
         App app = SpringLocator.getBean(App.class);
 
         try {
             app.start();
-        } catch (UnknownHostException e) {
-            logger.warn("init failed ", e);
-        } catch (IOException e) {
+        }  catch (IOException e) {
             logger.warn("init failed ", e);
         }
 
@@ -54,9 +49,8 @@ public class App {
 
     }
 
-    public void start() throws UnknownHostException, IOException {
-        udpSocketMonitor = SpringLocator.getBean(UDPSocketMonitor.class);
-        udpSocketMonitor.start();
+    public void start() throws  IOException {
+        //do the jobs that Queen asked to do.
     }
 
     private static void parseArgs(String[] args) throws ParseException{
