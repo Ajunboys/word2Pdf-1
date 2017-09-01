@@ -17,6 +17,7 @@ Office转PDF工具类
 
 * Office2PDF.java类:
 
+<<<<<<< HEAD
    1. 支持Office2003-2007全部格式的文档转PDF:
 										.doc|.doc|.docx|.xls|.xlsx|.ppt|.pptx
 												
@@ -45,3 +46,20 @@ Office转PDF工具类
    在pom.xml中指定此包.
    
    3. 切记:pom.xml与lib目录必须同级		
+=======
+    1. 支持Office2003-2007全部格式的文档转PDF:
+                                    .doc|.doc|.docx|.xls|.xlsx|.ppt|.pptx
+                                    
+    2. inputFilePath:文件原路径,outputFilePath:目标文件路径
+    
+    3. getFilePDF();为主方法,调用此方法可完成转换\
+    
+    4. getOfficeManager();此方法是获取OpenOffice 4的安装目录并开启OpenOffice
+    
+    5. office2pdf();此方法为转换方法,转换成功返回true,转换失败则返回false
+    
+				
+### 使用方法
+								
+* 
+>>>>>>> 50e4312018463bc58b9ebfe4379d16e727a9cac1
