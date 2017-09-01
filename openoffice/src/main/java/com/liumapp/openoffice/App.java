@@ -1,13 +1,15 @@
 package com.liumapp.openoffice;
 
+import com.liumapp.openoffice.utils.Office2PDF;
+
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World222!" );
-    }
+public class App{
+
+	public void Converter() throws Exception{
+		Office2PDF.getFilePDF();
+	}
+	
 }
