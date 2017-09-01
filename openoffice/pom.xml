@@ -30,6 +30,17 @@
 			<artifactId>jodconverter-core</artifactId>
 			<version>3.0-beta-4</version>
 		</dependency> -->
+<<<<<<< HEAD
+		
+			<dependency>
+				<groupId>org.artofsolving.jodconverter</groupId>
+				<artifactId>jodconverter-core</artifactId>
+				<version>3.0-beta-4</version>
+				<scope>system</scope>
+				 <systemPath>${basedir}/../lib/jodconverter-core-3.0-beta-4.jar</systemPath> 
+			</dependency>
+		
+=======
 
 		<dependency>
 			<groupId>org.artofsolving.jodconverter</groupId>
@@ -38,6 +49,7 @@
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/jodconverter-core-3.0-beta-4.jar</systemPath>
 		</dependency>
+>>>>>>> 48261ea196053a85f2dbe2f80061ac06fc25895d
 
 		<!-- https://mvnrepository.com/artifact/com.artofsolving/jodconverter-maven-plugin -->
 		<dependency>

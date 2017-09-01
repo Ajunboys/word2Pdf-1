@@ -1,4 +1,4 @@
-package com.liumapp.openoffice;
+package com.liumapp.openoffice.utils;
 
 import java.io.File;
 import java.util.Date;
@@ -45,7 +45,7 @@ public class Office2PDF {
 	 */
 	public static final String OFFICE_TO_TXT="txt";
 
-	public static void main(String[] args) throws Exception {
+	public static void getFilePDF() throws Exception{
 		Office2PDF office2pdf = new Office2PDF();
 		//office2pdf.openOfficeToPDF("D:/test." + OFFICE_DOCX, "D:/test_" + new Date().getTime() + "." + OFFICE_TO_PDF);
 		office2pdf.office2pdf("D:/test." +OFFICE_DOCX, "D:/test_" + new Date().getTime() + "." + OFFICE_TO_PDF);
