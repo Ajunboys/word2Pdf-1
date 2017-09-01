@@ -16,6 +16,12 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.hynnet/jacob -->
+		<dependency>
+		    <groupId>com.hynnet</groupId>
+		    <artifactId>jacob</artifactId>
+		    <version>1.18</version>
+		</dependency>      
     </dependencies>
 
 
