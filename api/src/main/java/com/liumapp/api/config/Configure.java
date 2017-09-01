@@ -2,6 +2,9 @@ package com.liumapp.api.config;
 
 import org.springframework.stereotype.Component;
 
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+
 /**
  * Created by liumapp on 8/31/17.
  * E-mail:liumapp.com@gmail.com
@@ -12,11 +15,27 @@ public class Configure {
 
     public static String FILE_PATH = "/usr/local/word2pdf";
 
-    /**
-     * 测试模式
-     * true:输出相当多的debug信息
-     * false:不输出无必要的log信息
-     */
-    public static boolean DEBUG = true;
+    private SocketAddress fakeDnsServer;
+
+    private int threadNum = 4;
+
+    public final static int PORT = 40214;
+
+    public SocketAddress getFakeDnsServer() {
+        return fakeDnsServer;
+    }
+
+    public void setFakeDnsServer(String fakeDnsServer) {
+        this.fakeDnsServer = new InetSocketAddress(fakeDnsServer, PORT);
+    }
+
+    public int getThreadNum() {
+        return threadNum;
+    }
+
+    public void setThreadNum(int threadNum) {
+        this.threadNum = threadNum;
+    }
+
 
 }

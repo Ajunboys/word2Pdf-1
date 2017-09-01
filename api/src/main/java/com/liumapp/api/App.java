@@ -1,7 +1,11 @@
 package com.liumapp.api;
 
 import com.liumapp.api.config.Configure;
+import com.liumapp.api.connector.UDPSocketMonitor;
+import com.liumapp.api.utils.SpringLocator;
 import org.apache.commons.cli.*;
+import org.apache.log4j.Logger;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -15,6 +19,12 @@ import java.net.UnknownHostException;
 @Component
 public class App {
 
+    private boolean isShutDown = false;
+
+    private static Logger logger = Logger.getLogger(App.class);
+
+    private UDPSocketMonitor udpSocketMonitor;
+
     public static void main(String[] args) {
 
         try {
@@ -23,19 +33,18 @@ public class App {
             logger.warn("parse args error");
         }
 
-        SpringLocator.applicationContext = new ClassPathXmlApplicationContext(
-                "classpath*:/spring/applicationContext*.xml");
-        DNSBrood dnsBrood = SpringLocator.getBean(DNSBrood.class);
+        SpringLocator.applicationContext = new ClassPathXmlApplicationContext("classpath*:/spring/applicationContext*.xml");
+        App app = SpringLocator.getBean(App.class);
 
         try {
-            dnsBrood.start();
+            app.start();
         } catch (UnknownHostException e) {
             logger.warn("init failed ", e);
         } catch (IOException e) {
             logger.warn("init failed ", e);
         }
 
-        while (!dnsBrood.isShutDown) {
+        while (!app.isShutDown) {
             try {
                 Thread.sleep(10000000);
             } catch (InterruptedException e) {
@@ -43,6 +52,11 @@ public class App {
             }
         }
 
+    }
+
+    public void start() throws UnknownHostException, IOException {
+        udpSocketMonitor = SpringLocator.getBean(UDPSocketMonitor.class);
+        udpSocketMonitor.start();
     }
 
     private static void parseArgs(String[] args) throws ParseException{
