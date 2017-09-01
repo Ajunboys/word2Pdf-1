@@ -35,7 +35,7 @@
 				<artifactId>jodconverter-core</artifactId>
 				<version>3.0-beta-4</version>
 				<scope>system</scope>
-				 <systemPath>${basedir}/../lib/jodconverter-core-3.0-beta-4.jar</systemPath> 
+				 <systemPath>${basedir}/lib/jodconverter-core-3.0-beta-4.jar</systemPath> 
 			</dependency>
 		
 
