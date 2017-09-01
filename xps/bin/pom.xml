@@ -6,7 +6,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>api</artifactId>
+    <artifactId>xps</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -16,7 +16,14 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.hynnet/jacob -->
+		<dependency>
+		    <groupId>com.hynnet</groupId>
+		    <artifactId>jacob</artifactId>
+		    <version>1.18</version>
+		</dependency>      
     </dependencies>
+
 
     <build>
         <plugins>
@@ -28,7 +35,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>./lib/</classpathPrefix>
-                            <mainClass>com.liumapp.api.App</mainClass>
+                            <mainClass>com.liumapp.xps.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
