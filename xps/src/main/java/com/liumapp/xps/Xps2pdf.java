@@ -7,21 +7,11 @@ import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
 
-public class xps2pdf {
+public class Xps2pdf {
 	static final int wdFormatPDF = 17;// PDF 格式    
 	static final int ppSaveAsPDF = 32;// ppt 转PDF 格式 
    
-	 public static void main(String[] args){
-	     System.out.println(Thread.currentThread().getName());
-	      for(int i=0; i<1; i++){
-	         new Thread("" + i){
-	            public void run(){       
-	            	new xps2pdf().word2Pdf("C:/word/test0.docx","C:/word/test0.pdf");
-	            }
-	         }.start();
-	      }
-	  }
-	 
+	
 	 public  void word2Pdf(String sfileName,String toFileName){
 		 long start = System.currentTimeMillis();      
 	        ActiveXComponent app = null;  
