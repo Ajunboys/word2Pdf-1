@@ -55,8 +55,6 @@ public class WatcherTest extends TestCase {
         }
     }
 
-
-
     @Ignore
     @Override
     protected void setUp() throws Exception {
