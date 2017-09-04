@@ -6,7 +6,7 @@ import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
-import com.liumapp.api.config.Orderpattern;
+import com.liumapp.pattern.config.Orderpattern;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -38,9 +38,8 @@ public class Xps2pdf {
 	                          toFileName, // FileName      
 	                          wdFormatPDF);      
 	            long end = System.currentTimeMillis();      
-	            System.out.println("转换完成..用时：" + (end - start) + "ms.");  
-	              
-	                
+	            System.out.println("转换完成..用时：" + (end - start) + "ms.");
+
 	        } catch (Exception e) {      
 	            System.out.println("========Error:文档转换失败：" + e.getMessage());      
 	        } finally {  

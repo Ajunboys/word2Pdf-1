@@ -1,4 +1,4 @@
-package com.liumapp.api.config;
+package com.liumapp.pattern.config;
 
 /**
  * Created by liumapp on 9/1/17.
