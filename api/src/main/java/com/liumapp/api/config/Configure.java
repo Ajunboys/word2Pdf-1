@@ -37,7 +37,4 @@ public class Configure {
         this.threadNum = threadNum;
     }
 
-
-
-
 }
