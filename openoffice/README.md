@@ -8,7 +8,6 @@ Office转PDF工具类
 - App :调用工具类
 
 
-
 ### 基本说明
 
 * 首先安装OpenOffice,记住安装的路径,我安装的是在C:/Program Files (x86)/OpenOffice 4
@@ -33,7 +32,6 @@ Office转PDF工具类
    1. 当调用此工具类时在此类中传入 inputFilePath 和 outputFilePath
    
    根据传入的文件路径调用转换方法(office2pdf())方法.
-   	
    	
    	
 ### 注意事项

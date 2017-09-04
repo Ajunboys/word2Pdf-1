@@ -6,6 +6,7 @@ import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
+import com.liumapp.api.config.Orderpattern;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,7 +28,7 @@ public class Xps2pdf {
 	            //String path = session.getServletContext().getRealPath("/")+"attachment/";	              
 	            doc = Dispatch.call(docs,  "Open" , sfileName).toDispatch();  
 	            System.out.println("打开文档..." + sfileName);  
-	            System.out.println("转换文档到PDF..." + toFileName);      
+	            System.out.println("转换文档到PDF..." + toFileName);
 	            File tofile = new File(toFileName);      
 	            if (tofile.exists()) {      
 	                tofile.delete();      
@@ -52,7 +53,7 @@ public class Xps2pdf {
 	           ComThread.Release();
 	}
 
-	public String test () {
+	public String test (Orderpattern orderpattern) {
 		return "this is xps test info";
 	}
 

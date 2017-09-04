@@ -15,14 +15,12 @@ public class WatcherTest extends TestCase {
     private Queen queen;
 
     public void testOrder () {
-
         try {
             queen.say("give me a word");
             System.out.println(queen.hear());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public void testOpenOffice() {
