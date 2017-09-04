@@ -13,15 +13,27 @@ import java.io.IOException;
 public class WatcherTest extends TestCase {
 
     public void testOrder () {
-        Queen queen = new Queen();
-        try {
-            queen.connect();
-            queen.say("give me a word");
-            System.out.println(queen.hear());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+//        Queen queen = new Queen();
+//        try {
+//            queen.connect();
+//            queen.say("give me a word");
+//            System.out.println(queen.hear());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    public void testOpenOffice() {
+
+//        Queen queen = new Queen();
     }
 
 
+    @Override
+    protected void setUp() throws Exception {
+
+        System.out.println("this is setup");
+
+    }
 }

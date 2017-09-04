@@ -1,4 +1,4 @@
-package com.liumapp.xps;
+package com.liumapp.xps.utils;
 
 import java.io.File;
 
@@ -8,11 +8,12 @@ import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
 
 public class Xps2pdf {
-	static final int wdFormatPDF = 17;// PDF 格式    
-	static final int ppSaveAsPDF = 32;// ppt 转PDF 格式 
-   
+
+	static final int wdFormatPDF = 17;// PDF 格式
+
+	static final int ppSaveAsPDF = 32;// ppt 转PDF 格式
 	
-	 public  void word2Pdf(String sfileName,String toFileName){
+	public  void word2Pdf(String sfileName,String toFileName){
 		 long start = System.currentTimeMillis();      
 	        ActiveXComponent app = null;  
 	        Dispatch doc = null;  
@@ -47,5 +48,10 @@ public class Xps2pdf {
 	            }  
 	          //如果没有这句话,winword.exe进程将不会关闭  
 	           ComThread.Release();
-	 }
+	}
+
+	public String test () {
+		return "this is xps test info";
+	}
+
 }

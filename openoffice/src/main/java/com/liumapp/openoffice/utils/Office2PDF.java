@@ -182,4 +182,8 @@ public class Office2PDF {
 		return inputFilePath.substring(inputFilePath.lastIndexOf(".") + 1);
 	}
 
+	public String test () {
+		return "this is office2pdf test info";
+	}
+
 }
