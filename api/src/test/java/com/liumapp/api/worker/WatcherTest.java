@@ -34,6 +34,14 @@ public class WatcherTest extends TestCase {
         }
     }
 
+    public void testXps() {
+        queen.say("http://oss.aliyun.com/test_testfile_doc_5172912");
+        try {
+            System.out.println(queen.hear());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void setUp() throws Exception {

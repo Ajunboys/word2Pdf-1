@@ -6,7 +6,9 @@ import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Xps2pdf {
 
 	static final int wdFormatPDF = 17;// PDF 格式

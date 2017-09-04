@@ -4,6 +4,7 @@ import com.liumapp.DNSQueen.worker.ready.StandReadyWorker;
 import com.liumapp.api.config.Configure;
 import com.liumapp.api.config.Orderpattern;
 import com.liumapp.openoffice.utils.Office2PDF;
+import com.liumapp.xps.utils.Xps2pdf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,6 +29,8 @@ public class Watcher extends StandReadyWorker {
 
         if (orderpattern.getType().equals("doc") || orderpattern.getType().equals("docx")) {
             //调用xps模块
+            Xps2pdf xps2pdf = new Xps2pdf();
+            result = xps2pdf.test();
         } else if (orderpattern.getType().equals("html")) {
             //调用wkhtmltopdf模块
         } else {
