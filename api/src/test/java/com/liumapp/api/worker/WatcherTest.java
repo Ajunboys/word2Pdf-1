@@ -12,28 +12,35 @@ import java.io.IOException;
  */
 public class WatcherTest extends TestCase {
 
+    private Queen queen;
+
     public void testOrder () {
 
-//        Queen queen = new Queen();
-//        try {
-//            queen.connect();
-//            queen.say("give me a word");
-//            System.out.println(queen.hear());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            queen.say("give me a word");
+            System.out.println(queen.hear());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void testOpenOffice() {
-
-//        Queen queen = new Queen();
+        queen.say("http://oss.aliyun.com/test_testfile_ppt_5172912");
+        try {
+            System.out.println(queen.hear());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
     @Override
     protected void setUp() throws Exception {
 
-        System.out.println("this is setup");
+        queen = new Queen();
+        queen.connect();
 
     }
+
 }

@@ -1,5 +1,6 @@
 package com.liumapp.openoffice;
 import com.liumapp.openoffice.utils.Office2PDF;
+import org.springframework.stereotype.Component;
 
 /**
  * Hello world!

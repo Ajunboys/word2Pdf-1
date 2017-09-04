@@ -4,6 +4,7 @@ package com.liumapp.api.config;
  * Created by liumapp on 9/1/17.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
+ * an order should be like : http://oss.aliyun.com/test_testfile_doc_5172912
  */
 public class Orderpattern {
 

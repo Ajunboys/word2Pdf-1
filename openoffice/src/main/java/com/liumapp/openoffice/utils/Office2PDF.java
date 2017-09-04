@@ -7,8 +7,9 @@ import java.util.regex.Pattern;
 import org.artofsolving.jodconverter.OfficeDocumentConverter;
 import org.artofsolving.jodconverter.office.DefaultOfficeManagerConfiguration;
 import org.artofsolving.jodconverter.office.OfficeManager;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class Office2PDF {
 
 	/**
