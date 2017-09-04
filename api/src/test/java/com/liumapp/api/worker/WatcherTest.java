@@ -40,6 +40,15 @@ public class WatcherTest extends TestCase {
             e.printStackTrace();
         }
     }
+    
+    public void xpsWorkInvo() {
+    	queen.say("D:/Demo/office2pdf/data_test0_docx_218876");
+        try {
+            System.out.println(queen.hear());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void setUp() throws Exception {

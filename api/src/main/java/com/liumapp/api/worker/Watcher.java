@@ -27,7 +27,8 @@ public class Watcher extends StandReadyWorker {
         if (orderpattern.getType().equals("doc") || orderpattern.getType().equals("docx")) {
             //调用xps模块
             Xps2pdf xps2pdf = new Xps2pdf();
-            result = xps2pdf.test(orderpattern);
+            //result = xps2pdf.test(orderpattern);
+            result = xps2pdf.xpsWork(orderpattern);
         } else if (orderpattern.getType().equals("html")) {
             //调用wkhtmltopdf模块
         } else {
