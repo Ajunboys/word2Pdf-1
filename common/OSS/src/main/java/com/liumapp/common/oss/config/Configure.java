@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-@Component
+@Component("OSSConfigure")
 public class Configure {
 
     private String AccessKeyId = "HLUmOSIDpYentPOt";
@@ -32,20 +32,49 @@ public class Configure {
 
     private String ImageAliasUrl ;
 
+    public String getAccessKeyId() {
+        return AccessKeyId;
+    }
+
+    public String getAccessKeySecret() {
+        return AccessKeySecret;
+    }
+
+    public String getAccessBaseUrl() {
+        return AccessBaseUrl;
+    }
+
+    public String getEndPoint() {
+        return EndPoint;
+    }
+
+    public String getBucket() {
+        return Bucket;
+    }
+
+    public int getExpires() {
+        return Expires;
+    }
+
+    public boolean isUseAlias() {
+        return UseAlias;
+    }
+
+    public String getFileUrl() {
+        return FileUrl;
+    }
+
+    public String getImageUrl() {
+        return ImageUrl;
+    }
+
+    public String getFileAliasUrl() {
+        return FileAliasUrl;
+    }
+
+    public String getImageAliasUrl() {
+        return ImageAliasUrl;
+    }
 
 }
 
-//
-//'oss'=>[
-//        'AccessKeyId' => 'HLUmOSIDpYentPOt',
-//        'AccessKeySecret' => 'DGKjmYhJYq9CBSLAVkKebMXGH056l2',
-//        'AccessBaseUrl' => 'http://huluwa-fangxin.oss-cn-qingdao.aliyuncs.com',
-//        'EndPoint' => 'http://oss-cn-qingdao.aliyuncs.com',
-//        'Bucket' => 'huluwa-fangxin',
-//        'Expires' => '7200',
-//        'UseAlias'=>false,
-//        'FileUrl' => 'http://huluwa-fangxin.oss-cn-qingdao.aliyuncs.com',
-//        'ImageUrl'=>'http://huluwa-fangxin.img-cn-qingdao.aliyuncs.com',
-//        'FileAliasUrl' => 'http://huluwa-fangxin.oss-cn-qingdao.aliyuncs.com',
-//        'ImageAliasUrl'=>'http://huluwa-fangxin.img-cn-qingdao.aliyuncs.com',
-//        ],
