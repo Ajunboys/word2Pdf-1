@@ -11,6 +11,7 @@ import java.io.IOException;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
+/*
 public class WatcherTest extends TestCase {
 
     private Queen queen;
@@ -65,3 +66,4 @@ public class WatcherTest extends TestCase {
     }
 
 }
+*/

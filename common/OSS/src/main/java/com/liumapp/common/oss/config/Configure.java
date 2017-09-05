@@ -32,7 +32,49 @@ public class Configure {
 
     private String ImageAliasUrl ;
 
+    public String getAccessKeyId() {
+        return AccessKeyId;
+    }
 
+    public String getAccessKeySecret() {
+        return AccessKeySecret;
+    }
+
+    public String getAccessBaseUrl() {
+        return AccessBaseUrl;
+    }
+
+    public String getEndPoint() {
+        return EndPoint;
+    }
+
+    public String getBucket() {
+        return Bucket;
+    }
+
+    public int getExpires() {
+        return Expires;
+    }
+
+    public boolean isUseAlias() {
+        return UseAlias;
+    }
+
+    public String getFileUrl() {
+        return FileUrl;
+    }
+
+    public String getImageUrl() {
+        return ImageUrl;
+    }
+
+    public String getFileAliasUrl() {
+        return FileAliasUrl;
+    }
+
+    public String getImageAliasUrl() {
+        return ImageAliasUrl;
+    }
 }
 
 //

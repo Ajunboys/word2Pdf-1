@@ -1,5 +1,8 @@
 package com.liumapp.common.oss.connector;
 
+import com.aliyun.oss.OSSClient;
+import com.liumapp.common.oss.config.Configure;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,10 +13,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class Connector {
 
-    private Connector connector = null;
+    @Autowired
+    private Configure configure;
+
+    private OSSClient client = null;
 
     public Connector() {
 
+        OSSClient client = new OSSClient(configure.getEndPoint() , configure.getAccessKeyId() , configure.getAccessKeySecret());
+
+    }
+
+    public OSSClient getClient() {
+        return client;
     }
 
 }
