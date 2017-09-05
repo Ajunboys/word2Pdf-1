@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-@Component
+@Component("OSSConfigure")
 public class Configure {
 
     private String AccessKeyId = "HLUmOSIDpYentPOt";
@@ -75,6 +75,7 @@ public class Configure {
     public String getImageAliasUrl() {
         return ImageAliasUrl;
     }
+
 }
 
 //
