@@ -14,6 +14,10 @@ import java.io.IOException;
 public class WatcherTest extends TestCase {
 
     private Queen queen;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7eaab489d39af141d6509f41ccd4cf10bd004855
     @Ignore
     public void testOrder () {
         try {
@@ -23,6 +27,10 @@ public class WatcherTest extends TestCase {
             e.printStackTrace();
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7eaab489d39af141d6509f41ccd4cf10bd004855
     @Ignore
     public void testOpenOffice() {
         queen.say("http://oss.aliyun.com/test_testfile_ppt_5172912");
@@ -32,6 +40,10 @@ public class WatcherTest extends TestCase {
             e.printStackTrace();
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7eaab489d39af141d6509f41ccd4cf10bd004855
     @Ignore
     public void testXps() {
         queen.say("http://oss.aliyun.com/test_testfile_doc_5172912");
@@ -42,7 +54,12 @@ public class WatcherTest extends TestCase {
         }
     }
 
+<<<<<<< HEAD
     public void testWorkInvo() {
+=======
+    @Ignore
+    public void xpsWorkInvo() {
+>>>>>>> 7eaab489d39af141d6509f41ccd4cf10bd004855
     	queen.say("D:/Demo/office2pdf/data_test0_docx_218876");
         try {
             System.out.println(queen.hear());
@@ -51,8 +68,7 @@ public class WatcherTest extends TestCase {
         }
     }
 
-
-
+    @Ignore
     @Override
     protected void setUp() throws Exception {
 
