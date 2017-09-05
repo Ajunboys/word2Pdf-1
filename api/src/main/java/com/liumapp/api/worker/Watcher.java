@@ -2,7 +2,6 @@ package com.liumapp.api.worker;
 
 import com.liumapp.DNSQueen.worker.ready.StandReadyWorker;
 import com.liumapp.api.config.Configure;
-import com.liumapp.openoffice.utils.Office2PDF;
 import com.liumapp.pattern.config.Orderpattern;
 import com.liumapp.xps.utils.Xps2pdf;
 import org.apache.log4j.Logger;
@@ -37,8 +36,8 @@ public class Watcher extends StandReadyWorker {
             //调用wkhtmltopdf模块
         } else {
             //调用openoffice模块
-            Office2PDF office2PDF = new Office2PDF();
-            result = office2PDF.test();
+          //  Office2PDF office2PDF = new Office2PDF();
+          //  result = office2PDF.test();
         }
         logger.info(result);
 
