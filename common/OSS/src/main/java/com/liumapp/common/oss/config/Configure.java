@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 @Component("OSSConfigure")
 public class Configure {
 
-    private String AccessKeyId = "";
+    private String AccessKeyId = "HLUmOSIDpYentPOt";
 
-    private String AccessKeySecret = "";
+    private String AccessKeySecret = "DGKjmYhJYq9CBSLAVkKebMXGH056l2";
 
-    private String AccessBaseUrl = "";
+    private String AccessBaseUrl = "http://huluwa-pdf.oss-cn-qingdao.aliyuncs.com";
 
-    private String EndPoint = "";
+    private String EndPoint = "http://oss-cn-qingdao.aliyuncs.com";
 
-    private String Bucket = "";
+    private String Bucket = "huluwa-pdf";
 
     private int Expires = 7200;
 
