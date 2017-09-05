@@ -10,15 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class Configure {
 
-    private String AccessKeyId = "HLUmOSIDpYentPOt";
+    private String AccessKeyId = "";
 
-    private String AccessKeySecret = "DGKjmYhJYq9CBSLAVkKebMXGH056l2";
+    private String AccessKeySecret = "";
 
-    private String AccessBaseUrl = "http://huluwa-pdf.oss-cn-qingdao.aliyuncs.com";
+    private String AccessBaseUrl = "";
 
-    private String EndPoint = "http://oss-cn-qingdao.aliyuncs.com";
+    private String EndPoint = "";
 
-    private String Bucket = "huluwa-pdf";
+    private String Bucket = "";
 
     private int Expires = 7200;
 
@@ -77,17 +77,3 @@ public class Configure {
     }
 }
 
-//
-//'oss'=>[
-//        'AccessKeyId' => 'HLUmOSIDpYentPOt',
-//        'AccessKeySecret' => 'DGKjmYhJYq9CBSLAVkKebMXGH056l2',
-//        'AccessBaseUrl' => 'http://huluwa-fangxin.oss-cn-qingdao.aliyuncs.com',
-//        'EndPoint' => 'http://oss-cn-qingdao.aliyuncs.com',
-//        'Bucket' => 'huluwa-fangxin',
-//        'Expires' => '7200',
-//        'UseAlias'=>false,
-//        'FileUrl' => 'http://huluwa-fangxin.oss-cn-qingdao.aliyuncs.com',
-//        'ImageUrl'=>'http://huluwa-fangxin.img-cn-qingdao.aliyuncs.com',
-//        'FileAliasUrl' => 'http://huluwa-fangxin.oss-cn-qingdao.aliyuncs.com',
-//        'ImageAliasUrl'=>'http://huluwa-fangxin.img-cn-qingdao.aliyuncs.com',
-//        ],
