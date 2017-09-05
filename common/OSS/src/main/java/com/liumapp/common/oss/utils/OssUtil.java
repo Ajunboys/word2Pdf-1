@@ -45,4 +45,10 @@ public class OssUtil {
         }
     }
 
+    public void downloadFile(String key) {
+
+        
+
+    }
+
 }
