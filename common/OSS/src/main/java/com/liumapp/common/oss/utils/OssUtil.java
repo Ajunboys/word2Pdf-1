@@ -27,8 +27,8 @@ public class OssUtil {
 
     /**
      *
-         OssUtil ossUtil = new OssUtil();
-         ossUtil.uploadFile("test/test2.docx" , new File("./data/test0.docx"));
+     OssUtil ossUtil = new OssUtil();
+     ossUtil.uploadFile("test/test2.docx" , new File("./data/test0.docx"));
      * @param key
      * @param file
      */
@@ -47,7 +47,7 @@ public class OssUtil {
 
     public void downloadFile(String key) {
 
-        
+
 
     }
 
