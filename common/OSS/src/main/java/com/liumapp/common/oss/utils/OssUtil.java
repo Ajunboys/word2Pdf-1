@@ -2,6 +2,7 @@ package com.liumapp.common.oss.utils;
 
 import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSSClient;
+import com.aliyun.oss.model.GetObjectRequest;
 import com.liumapp.common.oss.config.Configure;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -45,10 +46,24 @@ public class OssUtil {
         }
     }
 
-    public void downloadFile(String key) {
-
-
-
+    /**
+     *
+     OssUtil ossUtil = new OssUtil();
+     ossUtil.downloadFile("test/test0.docx" , new File("./data/download.docx"));
+     * @param key
+     * @param file
+     */
+    public void downloadFile(String key , File file) {
+        if (ossClient == null) {
+            connect();
+        }
+        try {
+            ossClient.getObject(new GetObjectRequest(configure.getBucket() , key) , file);
+        } catch (ClientException e) {
+            e.printStackTrace();
+        } finally {
+            ossClient.shutdown();
+        }
     }
 
 }

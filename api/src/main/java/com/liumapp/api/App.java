@@ -1,5 +1,6 @@
 package com.liumapp.api;
 
+import com.liumapp.DNSQueen.queen.Queen;
 import com.liumapp.api.config.Configure;
 import com.liumapp.api.utils.SpringLocator;
 import org.apache.commons.cli.*;
@@ -7,7 +8,6 @@ import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -17,6 +17,8 @@ import java.io.IOException;
  */
 @Component
 public class App {
+
+
 
     private boolean isShutDown = false;
 
@@ -52,11 +54,9 @@ public class App {
 
     public void start() throws  IOException {
         //do the jobs that Queen asked to do.
-
     }
 
     private static void parseArgs(String[] args) throws ParseException{
-
         Options options = new Options();
         options.addOption(new Option("d", true, "home path"));
         CommandLineParser commandLineParser = new PosixParser();

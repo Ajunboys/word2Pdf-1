@@ -1,3 +1,4 @@
+
 package com.liumapp.api.worker;
 
 import com.liumapp.DNSQueen.queen.Queen;
@@ -5,6 +6,7 @@ import jdk.nashorn.internal.ir.annotations.Ignore;
 import junit.framework.TestCase;
 
 import java.io.IOException;
+
 
 /**
  * Created by liumapp on 9/1/17.
@@ -66,3 +68,4 @@ import java.io.IOException;
  }
 
 }
+
