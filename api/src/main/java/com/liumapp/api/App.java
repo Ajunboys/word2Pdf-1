@@ -17,6 +17,8 @@ import java.io.IOException;
 @Component
 public class App {
 
+
+
     private boolean isShutDown = false;
 
     private static Logger logger = Logger.getLogger(App.class);
@@ -54,7 +56,6 @@ public class App {
     }
 
     private static void parseArgs(String[] args) throws ParseException{
-
         Options options = new Options();
         options.addOption(new Option("d", true, "home path"));
         CommandLineParser commandLineParser = new PosixParser();

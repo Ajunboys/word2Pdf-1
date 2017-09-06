@@ -9,6 +9,8 @@ import org.artofsolving.jodconverter.office.DefaultOfficeManagerConfiguration;
 import org.artofsolving.jodconverter.office.OfficeManager;
 import org.springframework.stereotype.Component;
 
+import com.liumapp.pattern.config.Orderpattern;
+
 @Component
 public class Office2PDF {
 
@@ -31,7 +33,7 @@ public class Office2PDF {
 	/**
 	 * office中.ppt格式
 	 */
-	public static final String OFFICE_PPT = "ppt";
+	public static final String OFFICE_PPT = "PPT";
 	/**
 	 * office中.pptx格式
 	 */
@@ -46,12 +48,12 @@ public class Office2PDF {
 	public static final String OFFICE_TO_TXT="txt";
 
 	
-	public static void getFilePDF() throws Exception{
+	/*public static void getFilePDF() throws Exception{
 		Office2PDF office2pdf = new Office2PDF();
 		//office2pdf.openOfficeToPDF("D:/test." + OFFICE_DOCX, "D:/test_" + new Date().getTime() + "." + OFFICE_TO_PDF);
 		office2pdf.office2pdf("D:/test." +OFFICE_DOCX, "D:/test_" + new Date().getTime() + "." + OFFICE_TO_PDF);
 		office2pdf.openOfficeToPDF("D:/test." + OFFICE_TO_PDF, null);
-	}
+	}*/
 
 	/**
 	 * 使Office2003-2007全部格式的文档(.doc|.docx|.xls|.xlsx|.ppt|.pptx) 转化为pdf文件<br>
@@ -64,7 +66,7 @@ public class Office2PDF {
 	 * @throws Exception 
 	 */
 	public boolean openOfficeToPDF(String inputFilePath, String outputFilePath) throws Exception {
-		return office2pdf(inputFilePath, outputFilePath);
+		return office2pdf(this, inputFilePath, outputFilePath);
 	}
 
 	/**
@@ -124,6 +126,7 @@ public class Office2PDF {
 	/**
 	 * 使Office2003-2007全部格式的文档(.doc|.docx|.xls|.xlsx|.ppt|.pptx) 转化为pdf文件<br>
 	 * 
+	 * @param office2PDF
 	 * @param inputFilePath
 	 *            源文件路径，如："e:/test.docx"
 	 * @param outputFilePath
@@ -131,9 +134,9 @@ public class Office2PDF {
 	 * @return
 	 * @throws Exception 
 	 */
-	public boolean office2pdf(String inputFilePath, String outputFilePath) throws Exception {
+	public static boolean office2pdf(Office2PDF office2PDF, String inputFilePath, String outputFilePath) throws Exception {
 		boolean flag = false;
-		OfficeManager officeManager = getOfficeManager();
+		OfficeManager officeManager = office2PDF.getOfficeManager();
 		// 连接OpenOffice
 		OfficeDocumentConverter converter = new OfficeDocumentConverter(officeManager);
 		long begin_time = new Date().getTime();
@@ -142,14 +145,14 @@ public class Office2PDF {
 			// 判断目标文件路径是否为空
 			if (null == outputFilePath) {
 				// 转换后的文件路径
-				String outputFilePath_end = getOutputFilePath(inputFilePath);
+				String outputFilePath_end = office2PDF.getOutputFilePath(inputFilePath);
 				if (inputFile.exists()) {// 找不到源文件, 则返回
-					converterFile(inputFile, outputFilePath_end, inputFilePath, outputFilePath, converter);
+					office2PDF.converterFile(inputFile, outputFilePath_end, inputFilePath, outputFilePath, converter);
 					flag = true;
 				}
 			} else {
 				if (inputFile.exists()) {// 找不到源文件, 则返回
-					converterFile(inputFile, outputFilePath, inputFilePath, outputFilePath, converter);
+					office2PDF.converterFile(inputFile, outputFilePath, inputFilePath, outputFilePath, converter);
 					flag = true;
 				}
 			}
@@ -175,7 +178,6 @@ public class Office2PDF {
 
 	/**
 	 * 获取inputFilePath的后缀名，如："e:/test.pptx"的后缀名为："pptx"<br>
-	 * 
 	 * @param inputFilePath
 	 * @return
 	 */
@@ -183,8 +185,27 @@ public class Office2PDF {
 		return inputFilePath.substring(inputFilePath.lastIndexOf(".") + 1);
 	}
 
-	public String test () {
-		return "this is office2pdf test info";
-	}
+	public String test (Orderpattern orderpattern) {
+
+		Office2PDF office2pdf = new Office2PDF();
+
+			try {
+				Office2PDF.office2pdf(office2pdf, orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+OFFICE_PPT,
+						orderpattern.getSavePath()+"/"+orderpattern.getFileName() + new Date().getTime() + "." + OFFICE_TO_PDF);
+				//E:/work/office2pdf/data\test.ppt
+				//office2pdf.office2pdf(orderpattern.getSavePath() + File.separator + orderpattern.getFileName() + "." + orderpattern.getType(), orderpattern.getSavePath() + File.separator + orderpattern.getFileName() + ".pdf");
+				return "success";
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			try {
+				office2pdf.openOfficeToPDF(orderpattern.getSavePath()+orderpattern.getFileName()+"." + OFFICE_TO_PDF, null);
+				//office2pdf.openOfficeToPDF(orderpattern.getSavePath() + File.separator + orderpattern.getFileName() + "." + OFFICE_TO_PDF, null);
+				return "success";
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "error";
+			}
+		}
 
 }
