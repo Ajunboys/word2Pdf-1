@@ -2,7 +2,6 @@ package com.liumapp.api;
 
 import com.liumapp.api.config.Configure;
 import com.liumapp.api.utils.SpringLocator;
-import com.liumapp.common.oss.utils.OssUtil;
 import org.apache.commons.cli.*;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
