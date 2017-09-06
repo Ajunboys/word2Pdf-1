@@ -38,3 +38,7 @@ target
 .DS_Store
 
 *.mwb.bak
+
+log
+
+data/*

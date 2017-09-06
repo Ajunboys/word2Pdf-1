@@ -21,9 +21,19 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
 		<!-- mvn install:install-file -Dfile=jodconverter-core-3.0-beta-4.jar -DgroupId=org.artofsolving.jodconverter 
 			-DartifactId=jodconverter-core -Dversion=3.0-beta-4 -Dpackaging=jar -->
-		 <dependency>
+		 
+
+		
+		<!-- https://mvnrepository.com/artifact/org.artofsolving.jodconverter/jodconverter-core -->
+		<!-- <dependency>
+			<groupId>org.artofsolving.jodconverter</groupId>
+			<artifactId>jodconverter-core</artifactId>
+			<version>3.0-beta-4</version>
+		</dependency> -->
+		<dependency>
 			<groupId>org.artofsolving.jodconverter</groupId>
 			<artifactId>jodconverter-core</artifactId>
 			<version>3.0-beta-4</version>
@@ -87,11 +97,6 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-
-
-
-
-
 	<build>
 		<plugins>
 			<plugin>
@@ -142,11 +147,6 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-
-			<!--<plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> 
-				<configuration> <webResources> <resource> <directory>${basedir}/../lib</directory> 
-				<targetPath>../lib</targetPath> <filtering>true</filtering> <includes> <include>**/jodconverter-core-3.0-beta-4.jar</include> 
-				</includes> </resource> </webResources> </configuration> </plugin> -->
 		</plugins>
 	</build>
 

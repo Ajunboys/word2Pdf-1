@@ -2,11 +2,13 @@ package com.liumapp.api;
 
 import com.liumapp.api.config.Configure;
 import com.liumapp.api.utils.SpringLocator;
+import com.liumapp.common.oss.utils.OssUtil;
 import org.apache.commons.cli.*;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -53,6 +55,7 @@ public class App {
 
     public void start() throws  IOException {
         //do the jobs that Queen asked to do.
+
     }
 
     private static void parseArgs(String[] args) throws ParseException{
@@ -72,6 +75,8 @@ public class App {
         }
 
     }
+
+
 
 
 }
