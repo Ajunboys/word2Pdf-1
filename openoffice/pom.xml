@@ -21,11 +21,12 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.artofsolving</groupId>
-			<artifactId>jodconverter</artifactId>
-			<version>2.2.1</version>
-		</dependency>
+
+		<!-- mvn install:install-file -Dfile=jodconverter-core-3.0-beta-4.jar -DgroupId=org.artofsolving.jodconverter 
+			-DartifactId=jodconverter-core -Dversion=3.0-beta-4 -Dpackaging=jar -->
+		 
+
+		
 		<!-- https://mvnrepository.com/artifact/org.artofsolving.jodconverter/jodconverter-core -->
 		<!-- <dependency>
 			<groupId>org.artofsolving.jodconverter</groupId>
@@ -39,13 +40,6 @@
 			<scope>system</scope>
 			<systemPath>${basedir}/../lib/jodconverter-core-3.0-beta-4.jar</systemPath>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.artofsolving/jodconverter-maven-plugin -->
-		<dependency>
-			<groupId>com.artofsolving</groupId>
-			<artifactId>jodconverter-maven-plugin</artifactId>
-			<version>2.2.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
 		<dependency>
 			<groupId>commons-cli</groupId>
 			<artifactId>commons-cli</artifactId>
@@ -97,8 +91,12 @@
 			<artifactId>slf4j-jdk14</artifactId>
 			<version>1.4.3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.liumapp</groupId>
+			<artifactId>pattern</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -143,6 +141,7 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
 					<encoding>UTF-8</encoding>

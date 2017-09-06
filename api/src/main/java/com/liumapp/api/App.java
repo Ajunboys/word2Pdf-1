@@ -18,6 +18,8 @@ import java.io.IOException;
 @Component
 public class App {
 
+
+
     private boolean isShutDown = false;
 
     private static Logger logger = Logger.getLogger(App.class);
@@ -51,20 +53,10 @@ public class App {
     }
 
     public void start() throws  IOException {
-        System.out.println("begin send word");
-        logger.info("begin send word");
         //do the jobs that Queen asked to do.
-        Queen queen = new Queen();
-        queen.setAddress("118.190.136.193");
-        queen.connect();
-        logger.info(queen.isConnected());
-        queen.say("give me a word");
-        System.out.println(queen.hear());
-        logger.info(queen.hear());
     }
 
     private static void parseArgs(String[] args) throws ParseException{
-
         Options options = new Options();
         options.addOption(new Option("d", true, "home path"));
         CommandLineParser commandLineParser = new PosixParser();
