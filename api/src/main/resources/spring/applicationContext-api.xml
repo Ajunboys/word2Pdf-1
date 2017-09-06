@@ -17,7 +17,6 @@
     <beans>
 
         <bean name="queenTcpSocketMonitor" class="com.liumapp.DNSQueen.worker.tcp.TCPSocketMonitor">
-            <constructor-arg name="host" type="java.lang.String" value="0.0.0.0"></constructor-arg>
             <constructor-arg name="port" type="int" value="40310"></constructor-arg>
         </bean>
 
