@@ -31,10 +31,10 @@ import java.io.IOException;
 //     protected void setUp () throws Exception {
 //
 //         queen = new Queen();
-//         queen.setAddress("118.190.40.58");
+//         queen.setAddress("118.190.136.193");
 //         queen.connect();
 //
 //     }
 //
 // }
-
+//
