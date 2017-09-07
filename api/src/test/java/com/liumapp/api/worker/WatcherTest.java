@@ -17,6 +17,7 @@ import java.io.IOException;
 //
 //     private Queen queen;
 //
+//
 //     public void testOrder () {
 //         try {
 //             queen.say("give me a word");
@@ -25,83 +26,16 @@ import java.io.IOException;
 //             e.printStackTrace();
 //         }
 //     }
-//
-//     @Ignore
-//     public void testOpenOffice() {
-//         queen.say("http: oss.aliyun.com/test_testfile_ppt_5172912");
-//         try {
-//
-//     @Ignore
-//     public void testOrder () {
-//         try {
-//             queen.say("give me a word");
-//             System.out.println(queen.hear());
-//         } catch (IOException e) {
-//             e.printStackTrace();
-//         }
-//     }
-//
- //   @Ignore
-    // public void testOpenOffice() {
-//        queen.say("E:/work/office2pdf/data_test2_PPT_9572912");
-//         try {
-//             System.out.println(queen.hear());
- //        } catch (IOException e) {
- //           e.printStackTrace();
- //       }
- //   }
-
-//     @Ignore
-//     public void testXps() {
-//         queen.say("http: oss.aliyun.com/test_testfile_doc_5172912");
-//         try {
-//             System.out.println(queen.hear());
-//         } catch (IOException e) {
-//             e.printStackTrace();
-//         }
-//     }
-//
-//     @Ignore
-//     public void testWorkInvo() {//D:/Demo/office2pdf/data_test0_docx_218876
-//             queen.say("C:/office2pdf/data/test0.docx");
-//             try {
-//                 System.out.println(queen.hear());
-//             } catch (IOException e) {
-//                 e.printStackTrace();
-//             }
-//         }
-//
 //
 //     @Override
 //     protected void setUp () throws Exception {
 //
 //         queen = new Queen();
-//         queen.setAddress("118.190.136.193");
+//         queen.setAddress("118.190.40.58");
 //         queen.connect();
 //
 //     }
 //
 // }
-//
-//     @Ignore
-//     public void testWorkInvo() {//D:/Demo/office2pdf/data_test0_docx_218876
-//             queen.say("C:/office2pdf/data/test0.docx");
-//             try {
-//                 System.out.println(queen.hear());
-//             } catch (IOException e) {
-//                 e.printStackTrace();
-//             }
-//         }
-//
-//
-//         @Override
-//         protected void setUp () throws Exception {
-//
-//             queen = new Queen();
-//             queen.connect();
-//
-//         }
-//
-// }
-//
+
 
