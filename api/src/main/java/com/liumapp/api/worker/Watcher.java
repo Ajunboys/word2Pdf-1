@@ -29,7 +29,7 @@ public class Watcher extends StandReadyWorker {
         Orderpattern orderpattern = Orderpattern.parse(s);
         String result = "";
 
-        if (orderpattern.getType().equals("doc") || orderpattern.getType().equals("txt")) {
+        if (orderpattern.getType().equals("docx") || orderpattern.getType().equals("doc")) {
             //调用xps模块
             Xps2pdf xps2pdf = new Xps2pdf();
             //result = xps2pdf.test(orderpattern);
