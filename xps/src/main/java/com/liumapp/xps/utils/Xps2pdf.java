@@ -23,7 +23,7 @@ public class Xps2pdf {
 	 * @param toFileName 
 	 * @return 转换成功的pdf文件
 	 */
-	public  File word2Pdf(String sfileName,String toFileName){
+	public  File word2Pdf (String sfileName,String toFileName) {
 		 long start = System.currentTimeMillis();      
 	        ActiveXComponent app = null;  
 	        Dispatch doc = null;  
@@ -65,7 +65,7 @@ public class Xps2pdf {
 	 * @param outFilePath 转换后的文件保存路径
 	 * @return
 	 */
-	public  String xls2Pdf(String inFilePath,String outFilePath){
+	public  boolean xls2Pdf (String inFilePath,String outFilePath) {
 		ComThread.InitSTA(true);
 		ActiveXComponent ax=new ActiveXComponent("Excel.Application");
 		try{
@@ -88,15 +88,16 @@ public class Xps2pdf {
 
 			Dispatch.call(excel, "Close",new Variant(false));
 
-			if(ax!=null){
+			if (ax!=null) {
 				ax.invoke("Quit",new Variant[]{});
 				ax=null;
 			}
 			ComThread.Release();
-			return "";
+			return true;
 		}catch(Exception es){
-			return es.toString();
+			es.printStackTrace();
 		}
+		return false;
 	}
 
 	/**
@@ -105,7 +106,7 @@ public class Xps2pdf {
 	 * @param pdfFile  转换成功后的文件保存路径
 	 * @return
 	 */
-	private  boolean ppt2PDF(String inputFile, String pdfFile) {
+	private  boolean ppt2PDF (String inputFile, String pdfFile) {
 		try {
 			ComThread.InitSTA(true);
 			ActiveXComponent app = new ActiveXComponent("KWPP.Application");
@@ -130,7 +131,7 @@ public class Xps2pdf {
 			return false;
 		}
 	}
-	public String xpsWork (Orderpattern orderpattern) {		
+	public String wordToPdf (Orderpattern orderpattern) {
 		String sfileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+orderpattern.getType();
 		String toFileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+".pdf";
 		Xps2pdf xps = new Xps2pdf();
@@ -140,6 +141,28 @@ public class Xps2pdf {
 		}
         return null;
 		
+	}
+
+	public String pptToPdf (Orderpattern orderpattern) {
+		String sfileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+orderpattern.getType();
+		String toFileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+".pdf";
+		Xps2pdf xps = new Xps2pdf();
+		boolean bool = xps.ppt2PDF(sfileName, toFileName);
+		if(bool==true){
+			return "success";
+		}
+		return null;
+	}
+
+	public String xlsToPdf (Orderpattern orderpattern) {
+		String sfileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+orderpattern.getType();
+		String toFileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+".pdf";
+		Xps2pdf xps = new Xps2pdf();
+		boolean bool = xps.xls2Pdf(sfileName,toFileName);
+		if(bool==true){
+			return "success";
+		}
+		return null;
 	}
 	
 	public String test() {
