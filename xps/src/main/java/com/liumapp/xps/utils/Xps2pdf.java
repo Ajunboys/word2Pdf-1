@@ -1,17 +1,24 @@
 package com.liumapp.xps.utils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
+import com.liumapp.common.oss.utils.OssUtil;
 import com.liumapp.pattern.config.Orderpattern;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Xps2pdf {
+
+	private final String OFFICE_PATH = "C:/office/";
+
+	private final String  OSS_PATH = "office/";
 
 	static final int wdFormatPDF = 17;// PDF 格式
 
@@ -106,7 +113,7 @@ public class Xps2pdf {
 	 * @param pdfFile  转换成功后的文件保存路径
 	 * @return
 	 */
-	private  boolean ppt2PDF (String inputFile, String pdfFile) {
+	public boolean ppt2PDF(String inputFile, String pdfFile) {
 		try {
 			ComThread.InitSTA(true);
 			ActiveXComponent app = new ActiveXComponent("KWPP.Application");
@@ -127,46 +134,80 @@ public class Xps2pdf {
 			app.invoke("Quit");
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			   e.printStackTrace();
 			return false;
 		}
 	}
 	public String wordToPdf (Orderpattern orderpattern) {
-		String sfileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+orderpattern.getType();
-		String toFileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+".pdf";
 		Xps2pdf xps = new Xps2pdf();
-        File file = xps.word2Pdf(sfileName, toFileName);
+		List<String> list =xps.downFile(orderpattern);
+        File file = xps.word2Pdf(list.get(0), list.get(1));
         if(file != null){
-		return "success";
+        	deleteFile(list.get(0));
+		    return list.get(1);
 		}
         return null;
 		
 	}
 
 	public String pptToPdf (Orderpattern orderpattern) {
-		String sfileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+orderpattern.getType();
-		String toFileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+".pdf";
 		Xps2pdf xps = new Xps2pdf();
-		boolean bool = xps.ppt2PDF(sfileName, toFileName);
+		List<String> list =xps.downFile(orderpattern);
+		System.out.println("-------------"+list.size()+"-------------");
+		boolean bool = xps.ppt2PDF(list.get(0), list.get(1));
 		if(bool==true){
-			return "success";
+			deleteFile(list.get(0));
+			return list.get(1);
 		}
 		return null;
 	}
 
 	public String xlsToPdf (Orderpattern orderpattern) {
-		String sfileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+orderpattern.getType();
-		String toFileName = orderpattern.getSavePath()+"/"+orderpattern.getFileName()+".pdf";
 		Xps2pdf xps = new Xps2pdf();
-		boolean bool = xps.xls2Pdf(sfileName,toFileName);
+		List<String> list =xps.downFile(orderpattern);
+		System.out.println("-------------"+list.size()+"-------------");
+		boolean bool = xps.xls2Pdf(list.get(0), list.get(1));
 		if(bool==true){
-			return "success";
+			deleteFile(list.get(0));
+			return list.get(1);
 		}
 		return null;
 	}
-	
-	public String test() {
-		return "this is xps test info";
+
+	/**
+	 * 文件下载
+	 * @param orderpattern
+	 * @return 文件保存的路径
+	 */
+	public List<String> downFile (Orderpattern orderpattern) {
+		OssUtil ossUtil = new OssUtil();
+		List<String> pathList = new ArrayList<String>();
+		String sfileName = orderpattern.getFileName()+"."+orderpattern.getType();
+		File file = new File(OFFICE_PATH);
+		if(!file.exists()) {
+			file.mkdir();
+		}
+		String tempPath = OFFICE_PATH+orderpattern.getFileName()+"."+orderpattern.getType();
+		String pdfPath =  OFFICE_PATH+orderpattern.getFileName()+".pdf";
+		System.out.println(OSS_PATH+sfileName);
+		ossUtil.downloadFile(OSS_PATH+sfileName,new File(tempPath));
+		pathList.add(tempPath);
+		pathList.add(pdfPath);
+		return pathList;
 	}
 
+	/**
+	 * 删除本地临时保存的文件
+	 * @param path
+	 */
+	public void deleteFile (String path) {
+		File file = new File(path);
+		if (file.exists()) {
+			file.delete();
+		}
+	}
+
+	public String getOFFICE_PATH() {
+		return OFFICE_PATH;
+	}
 }

@@ -23,9 +23,9 @@ public class OssUtil {
     @Autowired
     private Configure configure = new Configure();
 
-    private OSSClient ossClient = null;
+    private  OSSClient ossClient = null;
 
-    private void connect() {
+    private  void connect() {
         ossClient = new OSSClient(configure.getEndPoint() , configure.getAccessKeyId() , configure.getAccessKeySecret());
     }
 
@@ -46,6 +46,7 @@ public class OssUtil {
             e.printStackTrace();
         } finally {
             ossClient.shutdown();
+            ossClient = null;
         }
     }
 
@@ -66,6 +67,7 @@ public class OssUtil {
             e.printStackTrace();
         } finally {
             ossClient.shutdown();
+            ossClient = null;
         }
     }
 
@@ -87,7 +89,11 @@ public class OssUtil {
             e.printStackTrace();
         } finally {
             ossClient.shutdown();
+            ossClient = null;
         }
     }
-
+    public static void main(String[] args) {
+        OssUtil o = new OssUtil();
+        o.downloadFile("office/您好1505465340686.doc",new File("E:/test/test36.pdf"));
+    }
 }
