@@ -2,8 +2,10 @@ package com.liumapp.openoffice.utils;
 
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Pattern;
 
+import com.liumapp.xps.utils.Xps2pdf;
 import org.artofsolving.jodconverter.OfficeDocumentConverter;
 import org.artofsolving.jodconverter.office.DefaultOfficeManagerConfiguration;
 import org.artofsolving.jodconverter.office.OfficeManager;
@@ -188,24 +190,28 @@ public class Office2PDF {
 	public String test (Orderpattern orderpattern) {
 
 		Office2PDF office2pdf = new Office2PDF();
-
-			try {
-				Office2PDF.office2pdf(office2pdf, orderpattern.getSavePath()+"/"+orderpattern.getFileName()+"."+OFFICE_PPT,
-						orderpattern.getSavePath()+"/"+orderpattern.getFileName() + new Date().getTime() + "." + OFFICE_TO_PDF);
-				//E:/work/office2pdf/data\test.ppt
-				//office2pdf.office2pdf(orderpattern.getSavePath() + File.separator + orderpattern.getFileName() + "." + orderpattern.getType(), orderpattern.getSavePath() + File.separator + orderpattern.getFileName() + ".pdf");
-				return "success";
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			try {
-				office2pdf.openOfficeToPDF(orderpattern.getSavePath()+orderpattern.getFileName()+"." + OFFICE_TO_PDF, null);
-				//office2pdf.openOfficeToPDF(orderpattern.getSavePath() + File.separator + orderpattern.getFileName() + "." + OFFICE_TO_PDF, null);
-				return "success";
-			} catch (Exception e) {
-				e.printStackTrace();
-				return "error";
-			}
+		Xps2pdf xps = new Xps2pdf();
+		List<String> list = xps.downFile(orderpattern);
+		boolean bool = false;
+		try {
+		bool = office2pdf.openOfficeToPDF(list.get(0),list.get(1));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		if (bool) {
+			xps.deleteFile(list.get(0));
+			return list.get(1);
+		}
+		return null;
+	}
+
+	public static void main(String[] args) {
+		Office2PDF of = new Office2PDF();
+		try {
+			of.openOfficeToPDF("C:\\ppt\\test.ppt","C:\\ppt\\test.pdf");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

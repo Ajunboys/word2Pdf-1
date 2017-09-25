@@ -25,3 +25,9 @@ Based on OpenOffice and Xps , turn office word to pdf online , under develop , p
 调用windows插件xps的模块
 
 
+#注意:
+该模块放到服务器时,需要在API模块下的target目录下的可执行jar包的MANIFEST.MF
+文件中加一个./lib/jodconverter-core-3.0-beta-4.jar
+(注意.前面有个空格,还有格式要正)   
+
+

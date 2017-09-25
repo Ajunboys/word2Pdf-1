@@ -3,11 +3,14 @@ package com.liumapp.api;
 import com.liumapp.DNSQueen.queen.Queen;
 import com.liumapp.api.config.Configure;
 import com.liumapp.api.utils.SpringLocator;
+import com.liumapp.common.oss.utils.OssUtil;
+import com.liumapp.xps.utils.Xps2pdf;
 import org.apache.commons.cli.*;
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -17,7 +20,6 @@ import java.io.IOException;
  */
 @Component
 public class App {
-
 
 
     private boolean isShutDown = false;
