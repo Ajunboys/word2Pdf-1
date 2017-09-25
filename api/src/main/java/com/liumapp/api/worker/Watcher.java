@@ -43,6 +43,7 @@ public class Watcher extends StandReadyWorker {
 //            result = office2PDF.test(orderpattern);
 
         }
+
         logger.info(result);
 
         return result;
